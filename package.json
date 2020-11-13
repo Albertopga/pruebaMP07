@@ -11,7 +11,9 @@
   "author": "Alberto Perez",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.0",
     "babel-template": "^6.26.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "nodemon": "^2.0.6"
