@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prueba</title>
+</head>
+<body>
+    <h1>Prueba Metaphase07</h1>
+    <form action="" method="post">
+        <input id="values" type="text" placeholder="introduce valores separados por una coma ">
+        <input type="button" value="Enviar" onclick="enviar()">
+    </form>
+    <h2 id="result"></h2>
+    <p id="calls"></p>
+</body>
+</html>
+
+<script>
+    const enviar=()=>{
+      const inputValue = document.getElementById("values").value
+      fetch(`http://localhost/sum/${inputValue}`)
+        .then(response=>response.json())
+        .then(data=> {
+          const div = document.getElementById("result")
+          div.innerText= `Resultado: ${data.sum}, número de veces llamado: ${data.cont}`
+          const p = document.getElementById("calls")
+          p.innerText= `número de veces llamado: ${data.cont}`
+          }
+        )
+    }
+</script>
